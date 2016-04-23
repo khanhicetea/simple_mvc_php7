@@ -1,0 +1,38 @@
+#inputer{
+    position: relative;
+}
+
+#inputer button#submit-comment{
+    position: absolute;
+    top: 0;
+}
+
+#inputer textarea#input-comment{
+    resize: none;
+    width: 70%;
+}
+
+#output-comment{
+    background: #F6F7F8;
+    width: 80%;
+    box-shadow: 0 0 10px #000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.item-comment{
+    margin-bottom: 8px;
+}
+
+.item-comment:last-child{
+    margin-bottom: 0;
+}
+
+.time-comment{
+    font: 400 10px/8px sans-serif;
+}
+
+.item-comment span.name{
+    color: #FF7E00;
+}

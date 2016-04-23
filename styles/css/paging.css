@@ -1,0 +1,34 @@
+#paging ul, #paging li{
+    list-style: none;
+    float: left;
+    display: block;
+}
+
+li.page{
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 25px;
+    box-shadow: 0 0 2px #000;
+    margin: 5px;
+    border-radius: 2px;
+    font: bold 14px/25px serif;
+}
+
+li.page a{
+    display: block;
+    text-decoration: none;
+    width: 35px;
+    height: 25px;
+    color: #005580;
+}
+
+li.page.focus{
+    opacity: 0.5;
+}
+
+li.page.out:hover{
+    opacity: 0.8;
+    box-shadow: 0 0 5px #000;
+}

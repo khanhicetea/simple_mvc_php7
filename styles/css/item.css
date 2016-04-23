@@ -1,0 +1,74 @@
+.pro-item{
+    border-radius: 2px;
+    width: 176px;
+    height: 200px;
+    float: left;
+    box-shadow: 0px 0px 2px #2A2A2A;
+    margin: 0 50px 50px 0;
+    position: relative;
+}
+
+.pro-item:hover{
+    box-shadow: 0px 0px 10px #2A2A2A;
+}
+
+.pro-item:nth-child(4n){
+    margin: 0 0 50px 0;
+}
+
+.pro-item .img_item{
+    margin-top: 10px;
+}
+
+.pro-item .img_item .format_img{
+    position: relative;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+}
+
+.pro-item .img_item .format_img img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+    display: block;
+    width: 120px;
+    height: 90px;
+}
+
+.pro-item .name_item{
+    padding: 5px 0;
+    height: 30px;
+    color: #5e5454;
+    width: 176px;
+    text-align: center;
+    font: bold 11px tahoma;
+    cursor: context-menu;
+}
+
+.pro-item .cost_item span{
+    width: 176px;
+    text-align: center;
+    color: #c64141;
+    font: bold 13px tahoma;
+    display: block;
+    cursor: context-menu;
+}
+
+.pro-item a.viewdetail{
+    position: absolute;
+    right: 10px;
+    bottom: -30px;
+}
+
+.pro-item a.buy_item{
+    display: block;
+    width: 113px;
+    height: 28px;
+    background: url('../../public/image/layout/icon-buy.png');
+    position: absolute;
+    left: 0;
+    bottom: -32px;
+}

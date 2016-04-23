@@ -1,0 +1,16 @@
+/* Nothing here yet */
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+#content{
+    margin-top: 55px;
+}
+
+body{
+    overflow-y: scroll;
+}

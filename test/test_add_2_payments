@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://moneylover.vn/" />
+<title>Add 2 payments : 1 million and 11 millions</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Add 2 payments : 1 million and 11 millions</td></tr>
+</thead><tbody>
+<tr>
+	<td>deleteAllVisibleCookies</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/index.php?c=auth&amp;m=login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputEmail</td>
+	<td>user1@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputPassword</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.btn.btn-success</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3</td>
+	<td>Quản lý chi tiêu cá nhân</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Thêm chi tiêu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputName</td>
+	<td>Chi tieu 1</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputTotal</td>
+	<td>1000000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3</td>
+	<td>Quản lý chi tiêu cá nhân</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Thêm chi tiêu</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputName</td>
+	<td>Chi tieu 2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=inputTotal</td>
+	<td>11000000</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Bạn có chắc là số tiền chi tiêu trên 10 triệu ?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3</td>
+	<td>Quản lý chi tiêu cá nhân</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

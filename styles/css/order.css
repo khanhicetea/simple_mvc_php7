@@ -1,0 +1,43 @@
+b.title_order{
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font: bold 30px/40px Tahoma;
+    margin-bottom: 20px;
+}
+
+tr.orderitem td{
+    font: 500 12px/14px Arial;
+}
+
+tr.orderitem td:nth-child(1),
+tr.orderitem td:nth-child(2),
+tr.orderitem td:nth-child(4){
+    text-align: center;
+}
+
+tr.orderitem td:nth-child(3),
+tr.orderitem td:nth-child(5){
+    text-align: right;
+    padding-right: 30px;
+}
+
+tr.titleorder th{
+    text-align: center;
+}
+
+#sum_order{
+    float: right;
+    padding-right: 20px;
+    font: bold 15px serif;
+}
+
+#btn_order{
+    display: block;
+    text-align: center;
+}
+
+#btn_order input{
+    margin-top: 20px;
+}

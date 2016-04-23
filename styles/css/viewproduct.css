@@ -1,0 +1,35 @@
+#image_product{
+    width: 240px;
+    height: 180px;
+    box-shadow: 0 0 2px #000;
+    border-radius: 5px;
+}
+
+#image_product img{
+    display: block;
+    width: 240px;
+    height: 180px;
+}
+
+#left{
+    float: left;
+    width: 250px;
+}
+
+#right{
+    float: left;
+    width: 400px;
+}
+
+#right #name_product{
+    font: bold 16px/24px sans-serif;
+}
+
+#right #info_product span{
+    display: block;
+}
+
+#right #info_product span.title{
+    font-style: italic;
+    font-weight: 700;
+}

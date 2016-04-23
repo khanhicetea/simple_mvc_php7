@@ -1,0 +1,95 @@
+a#btn-cart{
+    color: #999;
+}
+
+a#btn-cart:hover{
+    color: #fff;
+}
+
+#cart-main{
+    z-index: 9999999;
+    width: 650px;
+    /*height: 90px;*/
+    background: #f2f2f2;
+    position: absolute;
+    left: -550px;
+    top: 35px;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #999;
+    //opacity: 0.9;
+}
+
+#all-cart{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#all-cart table{
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    background: #888;
+    margin-bottom: 20px;
+}
+
+#closeCart{
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    color: #999;
+    font: bold 12px serif;
+}
+
+#order{
+    position: absolute;
+    bottom: 0;
+    left: 85px;
+    color: #999;
+    font: bold 12px serif;
+}
+
+#show_sum{
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    color: #990000;
+    font: bold 12px serif;
+}
+
+#all-cart table tr:nth-child(2n){
+    background: threedface;
+}
+
+#all-cart table tr td img{
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+#all-cart table tr td{
+    padding-right: 25px;
+    text-align: right;
+}
+
+#all-cart table tr td:first-child,
+#all-cart table tr td:last-child
+{
+    padding-right: 0;
+}
+
+#all-cart table tr td:nth-child(4){
+    text-align: center;
+    padding-right: 0;
+}
+
+tr.item-cart td img{
+    cursor: pointer;
+}
+
+a.removeItem{
+    font: bold 12px serif;
+    color: #000;
+    padding-right: 5px;
+    text-decoration: none;
+}
