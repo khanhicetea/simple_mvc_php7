@@ -1,6 +1,7 @@
 <?php
 $p = $data['product'][0];
 ?>
+<link href="styles/css/item.css" rel="stylesheet" type="text/css"/>
 <link href="styles/css/viewproduct.css" rel="stylesheet" type="text/css"/>
 <div id="left">
     <div id="image_product">
@@ -17,6 +18,7 @@ $p = $data['product'][0];
     <div id="info_product">
         <span class="title">Thông tin sản phẩm</span>
         <span><?php echo $p['info'] ?></span>
+        <a class="buy_item" href="javascript:buyitem(<?php echo $p['id'] ?>)"></a>
     </div>
 </div>
 <link href="styles/css/comment.css" rel="stylesheet" type="text/css"/>

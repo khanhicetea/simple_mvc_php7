@@ -72,3 +72,10 @@
     left: 0;
     bottom: -32px;
 }
+
+#info_product .buy_item {
+    display: block;
+    width: 113px;
+    height: 28px;
+    background: url('../../public/image/layout/icon-buy.png');
+}
