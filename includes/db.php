@@ -2,23 +2,29 @@
 
 $host = '127.0.0.1';
 $user = 'root';
-$password = '1234';
-$db_name = 'moneylover';
+$password = 'passwd';
+$db_name = 'simple_mvc';
 
-mysql_connect($host, $user, $password, $db_name) or die('Can not connect database !');
-mysql_select_db($db_name);
-mysql_set_charset('utf8');
+$conn = mysqli_connect($host, $user, $password, $db_name) or die('Can not connect database !');
+mysqli_select_db($conn, $db_name);
+mysqli_set_charset($conn, 'utf8');
 
 function esc($text) {
-    return mysql_real_escape_string($text);
+    global $conn;
+    return mysqli_real_escape_string($conn, $text);
+}
+
+function db_query($sql) {
+    global $conn;
+    return mysqli_query($conn, $sql);
 }
 
 function db_get_all($sql) {
-    $result = mysql_query($sql);
+    $result = db_query($sql);
     $data = array();
 
     if ($result) {
-        while ($row = mysql_fetch_assoc($result)) {
+        while ($row = mysqli_fetch_assoc($result)) {
             $data[] = $row;
         }
     }
@@ -27,31 +33,29 @@ function db_get_all($sql) {
 }
 
 function count_row($sql){
-    $result = mysql_query($sql);
-    return mysql_num_rows($result);
+    $result = db_query($sql);
+    return mysqli_num_rows($result);
 }
 
 function db_insert($table, $data, $tf = FALSE) {
     $fields = array_keys($data);
-    $e_data = array_map('mysql_real_escape_string', $data);
+    $e_data = array_map('mysqli_real_escape_string', $data);
 
     $sql = "INSERT INTO `{$table}` (`" . implode('`, `', $fields) . "`) VALUES ('" . implode("', '", $e_data) . "')";
 
     if ($tf) {
-        mysql_query($sql);
-        $inserted_id = mysql_insert_id();
+        db_query($sql);
+        global $conn;
+        $inserted_id = mysqli_insert_id($conn);
         return $inserted_id;
     }
 
-    return mysql_query($sql);
-
-    //$inserted_id = mysql_insert_id();
-    //return $inserted_id;
+    return db_query($sql);
 }
 
 function db_update($table, $data, $where, $tf = FALSE) {
     $fields = array_keys($data);
-    $e_data = array_map('mysql_real_escape_string', $data);
+    $e_data = array_map('esc', $data);
     $sets = array();
 
     foreach ($fields as $field) {
@@ -60,15 +64,16 @@ function db_update($table, $data, $where, $tf = FALSE) {
     $sql = "UPDATE `{$table}` SET " . implode(', ', $sets) . " WHERE {$where}";
 
     if ($tf) {
-        mysql_query($sql);
-        return mysql_affected_rows();
+        db_query($sql);
+        global $conn;
+        return mysqli_affected_rows($conn);
     }
-    return mysql_query($sql);
+    return db_query($sql);
 }
 
 function db_delete($table, $where) {
     $sql = "DELETE FROM `{$table}` WHERE {$where}";
-    return mysql_query($sql);
+    return db_query($sql);
 
-//    return mysql_affected_rows();
+//    return mysqli_affected_rows();
 }
